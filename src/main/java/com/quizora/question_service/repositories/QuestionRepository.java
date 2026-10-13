@@ -1,7 +1,7 @@
-package com.practice.quizora.repositories;
+package com.quizora.question_service.repositories;
 
-import com.practice.quizora.enums.Category;
-import com.practice.quizora.models.Question;
+import com.quizora.question_service.enums.Category;
+import com.quizora.question_service.models.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

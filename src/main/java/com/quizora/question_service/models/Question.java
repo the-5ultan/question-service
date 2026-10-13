@@ -1,7 +1,7 @@
-package com.practice.quizora.models;
+package com.quizora.question_service.models;
 
-import com.practice.quizora.enums.Category;
-import com.practice.quizora.enums.DifficultyLevel;
+import com.quizora.question_service.enums.Category;
+import com.quizora.question_service.enums.DifficultyLevel;
 import jakarta.persistence.*;
 import lombok.Data;
 

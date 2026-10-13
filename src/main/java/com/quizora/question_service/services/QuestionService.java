@@ -1,9 +1,9 @@
-package com.practice.quizora.services;
+package com.quizora.question_service.services;
 
 
-import com.practice.quizora.enums.Category;
-import com.practice.quizora.models.Question;
-import com.practice.quizora.repositories.QuestionRepository;
+import com.quizora.question_service.enums.Category;
+import com.quizora.question_service.models.Question;
+import com.quizora.question_service.repositories.QuestionRepository;
 import jakarta.persistence.Access;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
