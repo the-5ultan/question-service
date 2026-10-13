@@ -1,4 +1,4 @@
-package com.quizora.question_service.controllers;
+package com.practice.quizora.controllers;
 
 import com.practice.quizora.enums.Category;
 import com.practice.quizora.models.Question;
@@ -14,7 +14,7 @@ import java.util.List;
 public class QuestionController {
     @Autowired
     QuestionService questionService;
-
+    
     @GetMapping(path="getQuestions")
     public ResponseEntity<List<Question>> question(){
         return questionService.getAllQuestions();
