@@ -26,4 +26,12 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
             @Param("category") String category,
             @Param("numQ") int numQ
     );
+    @Query(//For the PostgreSQL the RAND() should be changed to RANDOM()
+            value = "SELECT q.id FROM questions q " +
+                    "WHERE category = :category " +
+                    "ORDER BY RAND() " +
+                    "LIMIT :numQ",
+            nativeQuery = true
+    )
+    List<Integer> generateQuestionsByCategory(String category,Integer numQ);
 }

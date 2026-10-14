@@ -68,4 +68,13 @@ public class QuestionService {
         }
 
     }
+
+    public ResponseEntity<List<Integer>> generateQuestionsByCategory(Category category, Integer numQ) {
+        try {
+            return new ResponseEntity<>(questionRepository.generateQuestionsByCategory(category.name(), numQ), HttpStatus.OK);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

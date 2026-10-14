@@ -39,4 +39,9 @@ public class QuestionController {
     public ResponseEntity<String> deleteQuestionByQuestionTitle(@RequestParam("questionTitle") String questionTitle){
         return questionService.deleteQuestionByQuestionTitle(questionTitle);
     }
+
+    @GetMapping(path = "generate")
+    public ResponseEntity<List<Integer>> generateQuestion(@RequestParam Category category, @RequestParam Integer numQ){
+        return questionService.generateQuestionsByCategory(category, numQ);
+    }
 }
