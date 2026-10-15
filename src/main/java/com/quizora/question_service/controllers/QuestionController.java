@@ -2,6 +2,7 @@ package com.quizora.question_service.controllers;
 
 import com.quizora.question_service.enums.Category;
 import com.quizora.question_service.models.Question;
+import com.quizora.question_service.models.QuestionWrapper;
 import com.quizora.question_service.services.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,5 +44,10 @@ public class QuestionController {
     @GetMapping(path = "generate")
     public ResponseEntity<List<Integer>> generateQuestion(@RequestParam Category category, @RequestParam Integer numQ){
         return questionService.generateQuestionsByCategory(category, numQ);
+    }
+
+    @PostMapping(path="getQuestions")
+    public ResponseEntity<List<QuestionWrapper>> getQuestions(@RequestBody List<Integer> questionIds){
+        return questionService.getQuestions(questionIds);
     }
 }
