@@ -3,6 +3,7 @@ package com.quizora.question_service.controllers;
 import com.quizora.question_service.enums.Category;
 import com.quizora.question_service.models.Question;
 import com.quizora.question_service.models.QuestionWrapper;
+import com.quizora.question_service.models.Response;
 import com.quizora.question_service.services.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -47,7 +48,12 @@ public class QuestionController {
     }
 
     @PostMapping(path="getQuestions")
-    public ResponseEntity<List<QuestionWrapper>> getQuestions(@RequestBody List<Integer> questionIds){
+    public ResponseEntity<List<QuestionWrapper>> getQuestionsById(@RequestBody List<Integer> questionIds){
         return questionService.getQuestions(questionIds);
+    }
+
+    @PostMapping(path="calculateScore")
+    public ResponseEntity<Integer> calculateScore(@RequestBody List<Response> responses){
+        return questionService.calculateScoreByResponces(responses);
     }
 }

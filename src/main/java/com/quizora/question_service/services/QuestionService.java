@@ -4,6 +4,7 @@ package com.quizora.question_service.services;
 import com.quizora.question_service.enums.Category;
 import com.quizora.question_service.models.Question;
 import com.quizora.question_service.models.QuestionWrapper;
+import com.quizora.question_service.models.Response;
 import com.quizora.question_service.repositories.QuestionRepository;
 import jakarta.persistence.Access;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,6 +96,23 @@ public class QuestionService {
                 list.add(questionWrapper);
             }
             return new ResponseEntity<>(list,HttpStatus.ACCEPTED);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public ResponseEntity<Integer> calculateScoreByResponces(List<Response> responses) {
+        try {
+            Integer score = 0;
+            for(Response response : responses){
+                Question question = questionRepository.findById(response.getId()).get();
+                String answer = question.getRightOption();
+                if(response.equals(question.getRightOption())){
+                    score++;
+                }
+            }
+            return new ResponseEntity<>(score,HttpStatus.OK);
         }catch (Exception e){
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
