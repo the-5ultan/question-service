@@ -1,13 +1,12 @@
 package com.quizora.question_service.repositories;
 
+import java.util.List;
+import org.springframework.stereotype.Repository;
 import com.quizora.question_service.enums.Category;
 import com.quizora.question_service.models.Question;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
-
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Integer> {

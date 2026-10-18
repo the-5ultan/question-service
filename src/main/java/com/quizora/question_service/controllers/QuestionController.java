@@ -1,15 +1,15 @@
 package com.quizora.question_service.controllers;
 
-import com.quizora.question_service.enums.Category;
-import com.quizora.question_service.models.Question;
-import com.quizora.question_service.models.QuestionWrapper;
-import com.quizora.question_service.models.Response;
-import com.quizora.question_service.services.QuestionService;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.quizora.question_service.enums.Category;
+import com.quizora.question_service.models.Question;
+import com.quizora.question_service.models.Response;
+import com.quizora.question_service.models.QuestionWrapper;
+import com.quizora.question_service.services.QuestionService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
 
 @RestController
 @RequestMapping (path="question")

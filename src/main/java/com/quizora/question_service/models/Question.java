@@ -1,9 +1,9 @@
 package com.quizora.question_service.models;
 
+import lombok.Data;
+import jakarta.persistence.*;
 import com.quizora.question_service.enums.Category;
 import com.quizora.question_service.enums.DifficultyLevel;
-import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
 @Data

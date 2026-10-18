@@ -1,19 +1,17 @@
 package com.quizora.question_service.services;
 
 
+import java.util.List;
+import java.util.ArrayList;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.http.ResponseEntity;
 import com.quizora.question_service.enums.Category;
+import com.quizora.question_service.models.Response;
 import com.quizora.question_service.models.Question;
 import com.quizora.question_service.models.QuestionWrapper;
-import com.quizora.question_service.models.Response;
-import com.quizora.question_service.repositories.QuestionRepository;
-import jakarta.persistence.Access;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.quizora.question_service.repositories.QuestionRepository;
 
 @Service
 public class QuestionService {
