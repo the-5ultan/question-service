@@ -7,7 +7,7 @@ import com.quizora.question_service.enums.DifficultyLevel;
 
 @Entity
 @Data
-@Table(name = "questions")
+@Table(name = "question")
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
