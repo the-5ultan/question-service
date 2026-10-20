@@ -15,7 +15,7 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
     List<Question> findByCategory(Category category);
     void deleteQuestionByQuestionTitle(String questionTitle);
     @Query(//For the PostgreSQL the RAND() should be changed to RANDOM()
-            value = "SELECT * FROM questions " +
+            value = "SELECT * FROM question " +
                     "WHERE category = :category " +
                     "ORDER BY RAND() " +
                     "LIMIT :numQ",
@@ -26,7 +26,7 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
             @Param("numQ") int numQ
     );
     @Query(//For the PostgreSQL the RAND() should be changed to RANDOM()
-            value = "SELECT q.id FROM questions q " +
+            value = "SELECT q.id FROM question q " +
                     "WHERE category = :category " +
                     "ORDER BY RAND() " +
                     "LIMIT :numQ",

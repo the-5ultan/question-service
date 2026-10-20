@@ -7,7 +7,7 @@ import com.quizora.question_service.enums.DifficultyLevel;
 
 @Entity
 @Data
-@Table(name = "question")
+@Table(name = "question")//Bug solved by changing it to the correct entity
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
