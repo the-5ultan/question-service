@@ -106,7 +106,7 @@ public class QuestionService {
             for(Response response : responses){
                 Question question = questionRepository.findById(response.getId()).get();
                 String answer = question.getRightOption();
-                if(response.equals(question.getRightOption())){
+                if(response.getAnswer().equals(question.getRightOption())){
                     score++;
                 }
             }
